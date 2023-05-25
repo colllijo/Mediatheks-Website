@@ -1,0 +1,17 @@
+/* Table */
+.resource-table {
+    width: 100%;
+} 
+
+.resource-table, .resource-table th, .resource-table td {
+    border: 1px solid var(--color-white);
+    border-collapse: collapse;
+}
+
+.resource-table tbody tr {
+    background-color: var(--color-yellow-green);
+}
+
+.resource-table tbody tr:nth-child(even) {
+    background-color: var(--color-apple-green);
+}

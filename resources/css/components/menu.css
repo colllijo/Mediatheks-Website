@@ -1,0 +1,43 @@
+/* Menu */
+.menu-div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 10%;
+}
+
+/* Search */
+.search {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 8px;
+
+    float: left;
+    font-size: x-large;
+}
+
+.search-box {
+    display: grid;
+    row-gap: 4px;
+}
+
+.search-box label {
+    display: inline;
+}
+
+.search-box input {
+    font-size: large;
+}
+
+.search-buttons button {
+    font-size: large;
+}
+
+/* Modify */
+.modify {
+    display: inline;
+    float: right;
+}
+
+.modify button {
+    font-size: large;
+}
