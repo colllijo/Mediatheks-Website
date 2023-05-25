@@ -1,13 +1,4 @@
-:root {
-    --color-black: #0A0A0A; 
-    --color-white: #F2F5FF;
-    --color-apple-green: #87A330;
-    --color-pakistan-green: #243010;
-    --color-yellow-green: #A1C349;
-    --color-sage: #CAD593;
-    --color-cal-poly-green: #2A3C24;
-    --color-highlight: #4A7C44;
-}
+@import "colors.css";
 
 html, body {
     width: 100%;
@@ -15,7 +6,15 @@ html, body {
     margin: 0;
     padding: 0;
 
+    box-sizing: border-box;
+
     background-color: var(--color-black);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 /* Page Navigation */
@@ -63,4 +62,14 @@ nav ul li a:hover {
 
 nav ul li .active {
     background-color: var(--color-highlight);
+}
+
+/* Main Page Content */
+main {
+    color: var(--color-white);
+}
+
+/* Page Footer */
+footer {
+    background-color: gray;
 }
