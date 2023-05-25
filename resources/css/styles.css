@@ -17,9 +17,13 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Page Navigation */
 nav ul {
-    position: sticky;
+    width: 100%;
     margin: 0;
     padding: 0;
     
