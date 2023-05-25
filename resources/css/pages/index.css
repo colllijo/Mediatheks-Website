@@ -1,0 +1,48 @@
+@import "colors.css";
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Style Main Text */
+.page-info {
+    width: 100%;
+    margin: 0;
+
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.page-info h1 {
+    text-align: center;
+}
+
+.page-info p {
+    font-size: large;
+    padding: 0 10%;
+}
+
+/* Resource Buttons */
+.resource-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 4%;
+    row-gap: 8%;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 8% 16%;
+}
+
+.resource-navigation button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-size: 640%;
+    /* background-color: var(--color-apple-green); */
+}
