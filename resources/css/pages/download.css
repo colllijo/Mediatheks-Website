@@ -1,0 +1,51 @@
+@import "../colors.css";
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Style Main Text */
+.page-info {
+    width: 100%;
+    margin: 0;
+
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.page-info h1 {
+    text-align: center;
+}
+
+.page-info p {
+    font-size: large;
+    padding: 0 10%;
+}
+
+/* Resource Buttons */
+.download-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4%;
+
+    box-sizing: border-box;
+    padding: 0 16%;
+}
+
+.download-buttons a {
+    width: fit-content;
+    height: fit-content;
+}
+
+.download-buttons button {
+    padding: 32px 64px;
+    font-size: larger;
+
+    border-radius: 10px;
+    background-color: var(--color-sage);
+}
+
+.download-buttons button:hover {
+    background-color: var(--color-yellow-green);
+}
