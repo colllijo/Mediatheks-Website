@@ -8,6 +8,7 @@
         <title>Mediathek: Kunde</title>
 
         <link rel="stylesheet" href="resources/css/styles.css"/>
+        <link rel="stylesheet" href="resources/css/customer.css"/>
     </head>
     <body>
         <header>
@@ -24,7 +25,102 @@
             </nav>
         </header>
         <main>
+            <dialog open>
+                <div class="title-bar">
+                    <span>Kunden Dialog</span>
+                    <button type="menu">&times;</button>
+                </div>
+                <div class="content">
+                    <form>
+                        <label for="id">ID: </label>
+                        <input type="number" name="id" id="id" disabled/>
 
+
+                        <label for="firstname">Vornamen: </label>
+                        <input type="text" name="firstname" id="firstname" placeholder="Vornamen"/>
+                        <p class="error hidden" id="firstname-error"></p>
+
+                        <label for="lastname">Nachnamen: </label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Nachnamen"/>
+                        <p class="error hidden" id="lastname-error"></p>
+
+
+                        <label for="birthdate">Geburtsdatum: </label>
+                        <input type="text" name="birthdate" id="birthdate" placeholder="Geburtsdatum"/>
+                        <p class="error hidden" id="birthdate-error"></p>
+
+                        <label for="email">E-Mail: </label>
+                        <input type="text" name="email" id="email" placeholder="E-Mail"/>
+                        <p class="error hidden" id="email-error"></p>
+
+
+                        <label for="address-street">Strasse: </label>
+                        <input type="text" name="address-street" id="address-street" placeholder="Strasse"/>
+                        <p class="error hidden" id="address-street-error"></p>
+
+                        <label for="address-number">Nr.: </label>
+                        <input type="text" name="address-number" id="address-number" placeholder="Nr."/>
+                        <p class="error hidden" id="address-number-error"></p>
+
+                        
+                        <label for="address-postcode">Postleitzahl: </label>
+                        <input type="text" name="address-postcode" id="address-postcode" placeholder="Postleitzahl"/>
+                        <p class="error hidden" id="address-postcode-error"></p>
+                        
+                        <label for="address-locality">Ortschaft: </label>
+                        <input type="text" name="address-locality" id="address-locality" placeholder="Ortschaft"/>
+                        <p class="error hidden" id="address-locality-error"></p>
+
+                        <div class="form-buttons">
+                            <button type="button">Speichern</button>
+                            <button type="reset">Abbrechen</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+            <div class="menu-div">
+                <div class="search">
+                    <div class="search-box">
+                        <label for="lastname-search">Nachnamen: </label>
+                        <input id="lastname-search" type="text" placeholder="Nachnamen"/>
+                        <label for="address-search">Adresse: </label>
+                        <input id="address-search" type="text" placeholder="Adresse"/>
+                    </div>
+                    <div class="search-buttons">
+                        <button>Suchen</button>
+                        <button>Alle Anzeigen</button>
+                    </div>
+                </div>
+                <div class="modify">
+                    <button>Kunde Erstellen</button>    
+                    <button disabled>Kunde Bearbeiten</button>    
+                    <button disabled>Kunde Löschen</button>    
+                </div>
+            </div>
+            <div class="table-div">
+                <table class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vornamen</th>
+                            <th>Nachnamen</th>
+                            <th>Geburtsdatum</th>
+                            <th>Email</th>
+                            <th>Adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Liam</td>
+                            <td>Metzger</td>
+                            <td>18.11.2005</td>
+                            <td>liam.metzger@bluewin.ch</td>
+                            <td>Dornhofstrasse 1, 4312 Magden</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <footer>
             
