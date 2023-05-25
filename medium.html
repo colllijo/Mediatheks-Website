@@ -8,6 +8,7 @@
         <title>Mediathek: Medium</title>
 
         <link rel="stylesheet" href="resources/css/styles.css"/>
+        <link rel="stylesheet" href="resources/css/medium.css"/>
     </head>
     <body>
         <header>
@@ -24,7 +25,98 @@
             </nav>
         </header>
         <main>
+            <dialog open>
+                <div class="title-bar">
+                    <span>Medien Dialog</span>
+                    <button type="menu">&times;</button>
+                </div>
+                <div class="content">
+                    <form>
+                        <label for="id">ID: </label>
+                        <input type="number" name="id" id="id" disabled/>
 
+
+                        <label for="title">Titel: </label>
+                        <input type="text" name="title" id="title" placeholder="Titel"/>
+                        <p class="error hidden" id="title-error"></p>
+
+                        <label for="author">Autor: </label>
+                        <input type="text" name="author" id="author" placeholder="Autor"/>
+                        <p class="error hidden" id="author-error"></p>
+
+
+                        <label for="genre">Genre: </label>
+                        <input type="text" name="genre" id="genre" placeholder="Genre"/>
+                        <p class="error hidden" id="genre-error"></p>
+
+                        <label for="age-restriction">Alterbeschränkung: </label>
+                        <input type="text" name="age-restriction" id="age-restriction" placeholder="Alterbeschränkung"/>
+                        <p class="error hidden" id="age-restriction-error"></p>
+
+
+                        <label for="isbn">ISBN: </label>
+                        <input type="text" name="isbn" id="isbn" placeholder="ISBN"/>
+                        <p class="error hidden" id="isbn-error"></p>
+
+                        <label for="ean">EAN: </label>
+                        <input type="text" name="ean" id="ean" placeholder="EAN"/>
+                        <p class="error hidden" id="ean-error"></p>
+
+                        
+                        <label for="shelf">Regal: </label>
+                        <input type="text" name="shelf" id="shelf" placeholder="Regal"/>
+                        <p class="error hidden" id="shelf-error"></p>
+
+                        <div class="form-buttons">
+                            <button type="button">Speichern</button>
+                            <button type="reset">Abbrechen</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+            <div class="menu-div">
+                <div class="search">
+                    <div class="search-box">
+                        <label for="title-search">Titel: </label>
+                        <input id="title-search" type="text" placeholder="Titel"/>
+                    </div>
+                    <div class="search-buttons">
+                        <button>Suchen</button>
+                        <button>Alle Anzeigen</button>
+                    </div>
+                </div>
+                <div class="modify">
+                    <button>Medium Erstellen</button>    
+                    <button disabled>Medium Bearbeiten</button>    
+                    <button disabled>Medium Löschen</button>    
+                </div>
+            </div>
+            <div class="table-div">
+                <table class="medium-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titel</th>
+                            <th>Autor</th>
+                            <th>Genre</th>
+                            <th>Alterbeschränkung</th>
+                            <th>ISBN/EAN</th>
+                            <th>Regal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>HTML & CSS</td>
+                            <td>Metzger, Liam</td>
+                            <td>Sachbuch</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <footer>
             
