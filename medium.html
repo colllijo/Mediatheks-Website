@@ -4,11 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page to view and interact with all mediums stored in the small library.">
         
         <title>Mediathek: Medium</title>
 
         <link rel="stylesheet" href="resources/css/styles.css"/>
         <link rel="stylesheet" href="resources/css/pages/medium.css"/>
+
+        <link type="image/png" sizes="16x16" rel="icon" href="resources/images/icon/book-16.png">
+        <link type="image/png" sizes="32x32" rel="icon" href="resources/images/icon/book-32.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="resources/images/icon/book-96.png">
+
+        <script src="resources/js/pages/medium.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -25,13 +32,13 @@
             </nav>
         </header>
         <main>
-            <dialog open>
+            <dialog id="resource-dialog">
                 <div class="title-bar">
                     <span>Medien Dialog</span>
-                    <button type="menu">&times;</button>
+                    <button id="close-button">&times;</button>
                 </div>
                 <div class="content">
-                    <form>
+                    <form id="medium-dialog">
                         <label for="id">ID: </label>
                         <input type="number" name="id" id="id" disabled/>
 
@@ -68,7 +75,7 @@
                         <p class="error hidden" id="shelf-error"></p>
 
                         <div class="form-buttons">
-                            <button type="button">Speichern</button>
+                            <button type="submit">Speichern</button>
                             <button type="reset">Abbrechen</button>
                         </div>
                     </form>
@@ -81,18 +88,18 @@
                         <input id="title-search" type="text" placeholder="Titel"/>
                     </div>
                     <div class="search-buttons">
-                        <button>Suchen</button>
-                        <button>Alle Anzeigen</button>
+                        <button id="search-button">Suchen</button>
+                        <button id="search-all-button">Alle Anzeigen</button>
                     </div>
                 </div>
                 <div class="modify">
-                    <button>Medium Erstellen</button>    
-                    <button disabled>Medium Bearbeiten</button>    
-                    <button disabled>Medium Löschen</button>    
+                    <button id="create-button">Medium Erstellen</button>    
+                    <button id="edit-button">Medium Bearbeiten</button>    
+                    <button id="delete-button">Medium Löschen</button>    
                 </div>
             </div>
             <div class="table-div">
-                <table class="resource-table">
+                <table class="resource-table" id="resource-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -105,15 +112,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>HTML & CSS</td>
-                            <td>Metzger, Liam</td>
-                            <td>Sachbuch</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -4,11 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page to view and interact with all borrows stored in the small library.">
         
         <title>Mediathek: Ausleihe</title>
 
         <link rel="stylesheet" href="resources/css/styles.css"/>
         <link rel="stylesheet" href="resources/css/pages/borrow.css"/>
+
+        <link type="image/png" sizes="16x16" rel="icon" href="resources/images/icon/book-16.png">
+        <link type="image/png" sizes="32x32" rel="icon" href="resources/images/icon/book-32.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="resources/images/icon/book-96.png">
+
+        <script src="resources/js/pages/borrow.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -25,13 +32,13 @@
             </nav>
         </header>
         <main>
-            <dialog open>
+            <dialog id="resource-dialog">
                 <div class="title-bar">
                     <span>Ausleihen Dialog</span>
-                    <button type="menu">&times;</button>
+                    <button id="close-button">&times;</button>
                 </div>
                 <div class="content">
-                    <form>
+                    <form id="borrow-dialog">
                         <label for="customer-id">Kunden ID: </label>
                         <input type="text" name="customer-id" id="customer-id" placeholder="Kunden ID"/>
                         <p class="error hidden" id="customer-id-error"></p>
@@ -40,13 +47,8 @@
                         <input type="text" name="medium-id" id="medium-id" placeholder="Medium ID"/>
                         <p class="error hidden" id="medium-id-error"></p>
 
-
-                        <label for="genre">Ausleihdatum: </label>
-                        <input type="date" name="borrow-date" id="borrow-date" disabled/>
-                        <p class="error hidden" id="borrow-date-error"></p>
-
                         <div class="form-buttons">
-                            <button type="button">Speichern</button>
+                            <button type="submit">Speichern</button>
                             <button type="reset">Abbrechen</button>
                         </div>
                     </form>
@@ -59,18 +61,18 @@
                         <input id="customer-id-search" type="text" placeholder="Kudnen Nr."/>
                     </div>
                     <div class="search-buttons">
-                        <button>Suchen</button>
-                        <button>Alle Anzeigen</button>
+                        <button id="search-button">Suchen</button>
+                        <button id="search-all-button">Alle Anzeigen</button>
                     </div>
                 </div>
                 <div class="modify">
-                    <button>Ausleihe Erstellen</button>    
-                    <button disabled>Ausleige Verlängern</button>    
-                    <button disabled>Ausleihe Löschen</button>    
+                    <button id="create-button">Ausleihe Erstellen</button>    
+                    <button id="edit-button">Ausleihe Verlängern</button>    
+                    <button id="delete-button">Ausleihe Löschen</button>    
                 </div>
             </div>
             <div class="table-div">
-                <table class="resource-table">
+                <table class="resource-table" id="resource-table">
                     <thead>
                         <tr>
                             <th>Kunde</th>
@@ -79,14 +81,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Kunde</td>
-                            <td>Medium</td>
-                            <td>2023-05-30</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

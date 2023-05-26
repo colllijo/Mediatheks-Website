@@ -8,10 +8,20 @@
     border-collapse: collapse;
 }
 
+.resource-table thead {
+    user-select: none;
+}
+
 .resource-table tbody tr {
+    color: var(--color-black);
     background-color: var(--color-yellow-green);
 }
 
 .resource-table tbody tr:nth-child(even) {
     background-color: var(--color-apple-green);
+}
+
+.resource-table tbody .selected {
+    background-color: var(--color-pakistan-green) !important;
+    color: var(--white) !important;
 }

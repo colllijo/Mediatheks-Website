@@ -4,11 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page to view and interact with all customers stored in the small library.">
         
         <title>Mediathek: Kunde</title>
 
         <link rel="stylesheet" href="resources/css/styles.css"/>
         <link rel="stylesheet" href="resources/css/pages/customer.css"/>
+
+        <link type="image/png" sizes="16x16" rel="icon" href="resources/images/icon/book-16.png">
+        <link type="image/png" sizes="32x32" rel="icon" href="resources/images/icon/book-32.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="resources/images/icon/book-96.png">
+
+        <script src="resources/js/pages/customer.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -25,13 +32,13 @@
             </nav>
         </header>
         <main>
-            <dialog open>
+            <dialog id="resource-dialog">
                 <div class="title-bar">
                     <span>Kunden Dialog</span>
-                    <button type="menu">&times;</button>
+                    <button id="close-button">&times;</button>
                 </div>
                 <div class="content">
-                    <form>
+                    <form id="customer-dialog">
                         <label for="id">ID: </label>
                         <input type="number" name="id" id="id" disabled/>
 
@@ -72,7 +79,7 @@
                         <p class="error hidden" id="address-locality-error"></p>
 
                         <div class="form-buttons">
-                            <button type="button">Speichern</button>
+                            <button type="submit">Speichern</button>
                             <button type="reset">Abbrechen</button>
                         </div>
                     </form>
@@ -87,18 +94,18 @@
                         <input id="address-search" type="text" placeholder="Adresse"/>
                     </div>
                     <div class="search-buttons">
-                        <button>Suchen</button>
-                        <button>Alle Anzeigen</button>
+                        <button id="search-button">Suchen</button>
+                        <button id="search-all-button">Alle Anzeigen</button>
                     </div>
                 </div>
                 <div class="modify">
-                    <button>Kunde Erstellen</button>    
-                    <button disabled>Kunde Bearbeiten</button>    
-                    <button disabled>Kunde Löschen</button>    
+                    <button id="create-button">Kunde Erstellen</button>    
+                    <button id="edit-button">Kunde Bearbeiten</button>    
+                    <button id="delete-button">Kunde Löschen</button>    
                 </div>
             </div>
             <div class="table-div">
-                <table class="resource-table">
+                <table class="resource-table" id="resource-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -110,14 +117,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Liam</td>
-                            <td>Metzger</td>
-                            <td>18.11.2005</td>
-                            <td>liam.metzger@bluewin.ch</td>
-                            <td>Dornhofstrasse 1, 4312 Magden</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
