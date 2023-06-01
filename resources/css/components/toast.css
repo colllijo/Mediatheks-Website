@@ -1,0 +1,31 @@
+@import "../colors.css";
+
+.toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  z-index: 1;
+
+  min-width: 250px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--color-cal-poly-green);
+  
+  color: var(--color-white);
+  font-size: 17px;
+  text-align: center;
+
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+  
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;} 
+  to {top: 25%; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 25%; opacity: 1;}
+}

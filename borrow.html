@@ -39,13 +39,17 @@
                 </div>
                 <div class="content">
                     <form id="borrow-dialog">
-                        <label for="customer-id">Kunden ID: </label>
-                        <input type="text" name="customer-id" id="customer-id" placeholder="Kunden ID"/>
-                        <p class="error hidden" id="customer-id-error"></p>
+                        <div>
+                            <label for="customer-id">Kunden: </label>
+                            <select name="customer-id" id="customer-id"></select>
+                            <p class="error hidden" id="customer-id-error"></p>
+                        </div>
 
-                        <label for="medium-id">Medium ID: </label>
-                        <input type="text" name="medium-id" id="medium-id" placeholder="Medium ID"/>
-                        <p class="error hidden" id="medium-id-error"></p>
+                        <div>
+                            <label for="medium-id">Medium: </label>
+                            <select name="medium-id" id="medium-id"></select>
+                            <p class="error hidden" id="medium-id-error"></p>
+                        </div>
 
                         <div class="form-buttons">
                             <button type="submit">Speichern</button>

@@ -21,6 +21,11 @@ body {
     display: none;
 }
 
+.error {
+    text-align: center;
+    color: red;
+}
+
 /* Page Navigation */
 nav ul {
     width: 100%;

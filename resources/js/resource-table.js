@@ -59,9 +59,6 @@ export class ResourceTable {
      */
     addTableData(element) {
         this.data.push(element);
-
-        console.log(this.data)
-
         this.addTableRow(element).addEventListener("mousedown", _ => this.selectTableRow(this.data.indexOf(element)));
     }
 
@@ -74,7 +71,7 @@ export class ResourceTable {
     updateTableData(index, element) {
         this.data[index] = element;
         this.tableBody.deleteRow(index);
-        this.addTableRow(element, index);
+        this.addTableRow(element, index).addEventListener("mousedown", _ => this.selectTableRow(this.data.indexOf(element)));
     }
 
     /**
@@ -119,7 +116,7 @@ export class ResourceTable {
      * @returns - The newly created row.
      */
     addTableRow(object, index) {
-        if (!index) {
+        if (!index || !object) {
             index = -1;
         }
 

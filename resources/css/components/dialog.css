@@ -25,33 +25,44 @@ dialog .content {
 
 dialog .content form {
     display: grid;
-    grid-template-columns: auto 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 4px;
 }
 
 dialog .content form * {
     margin: 4px 0;
+}
+
+dialog .content form div {
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-rows: auto 1fr;
+}
+
+dialog .content form div input {
     font-size: larger;
+    float: right;
 }
 
-dialog .content form #id {
-    grid-column: 2 / span 3;
+dialog .content form div .error {
+    grid-column: span 2;
 }
 
-dialog .content form .error {
-    grid-column: 1 / span 4;
+dialog .content form div:first-child {
+    grid-column: span 2;
 }
 
 dialog .content form .form-buttons {
-    grid-column: 1 / span 4;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
 }
 
 dialog .content form .form-buttons button:first-child {
     float: left;
-    width: 48%;
 }
 
 dialog .content form .form-buttons button:last-child {
     float: right;
-    width: 48%;
 }

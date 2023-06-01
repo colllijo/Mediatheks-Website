@@ -24,7 +24,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -39,7 +52,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -55,7 +81,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(medium)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -72,7 +111,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(medium)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -81,8 +133,20 @@ export class MediathekAPI {
      * @param {number} id - Id of the medium to delete. 
      */
     async deleteMedium(id) {
-        fetch(`${this.host}/api/v1/library/mediums/${id}`, {
+        return fetch(`${this.host}/api/v1/library/mediums/${id}`, {
             method: "DELETE",
+        }).then((data) => {
+            if (!data.ok) {
+                if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+            }
         });
     }
 
@@ -100,7 +164,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -115,7 +192,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -131,7 +221,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(address)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -148,7 +251,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(address)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -157,8 +273,14 @@ export class MediathekAPI {
      * @param {number} id - Id of the address to delete. 
      */
     async deleteAddress(id) {
-        fetch(`${this.host}/api/v1/library/addresses/${id}`, {
+        return fetch(`${this.host}/api/v1/library/addresses/${id}`, {
             method: "DELETE",
+        }).then((data) => {
+            if (!data.ok) {
+                return data.text().then((text) => {
+                    throw new Error(text);
+                });
+            }
         });
     }
     
@@ -175,7 +297,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -190,7 +325,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -206,7 +354,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(customer)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -223,7 +384,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(customer)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -232,8 +406,14 @@ export class MediathekAPI {
      * @param {number} id - Id of the customer to delete. 
      */
     async deleteCustomer(id) {
-        fetch(`${this.host}/api/v1/library/customers/${id}`, {
+        return fetch(`${this.host}/api/v1/library/customers/${id}`, {
             method: "DELETE",
+        }).then((data) => {
+            if (!data.ok) {
+                return data.text().then((text) => {
+                    throw new Error(text);
+                });
+            }
         });
     }
     
@@ -250,7 +430,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -265,7 +458,20 @@ export class MediathekAPI {
             headers: {
                 "Accept": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -281,7 +487,20 @@ export class MediathekAPI {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(borrow)
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -296,7 +515,20 @@ export class MediathekAPI {
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then((data) => data.json());
+        }).then((data) => {
+            if (data.ok) {
+                return data.json();
+            }
+            if (data.headers.get("Content-Type") === "application/json") {
+                    return data.json().then((text) => {
+                        throw new Error(text.error);
+                    });
+                } else {
+                    return data.text().then((text) => {
+                        throw new Error(text);
+                    });
+                }
+        });
     }
 
     /**
@@ -305,8 +537,14 @@ export class MediathekAPI {
      * @param {number} id - Id of the borrow to delete. 
      */
     async deleteBorrow(id) {
-        fetch(`${this.host}/api/v1/library/borrows/${id}`, {
+        return fetch(`${this.host}/api/v1/library/borrows/${id}`, {
             method: "DELETE",
+        }).then((data) => {
+            if (!data.ok) {
+                return data.text().then((text) => {
+                    throw new Error(text);
+                });
+            }
         });
     }
 }

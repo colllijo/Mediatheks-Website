@@ -39,45 +39,62 @@
                 </div>
                 <div class="content">
                     <form id="customer-dialog">
-                        <label for="id">ID: </label>
-                        <input type="number" name="id" id="id" disabled/>
+                        <div>
+                            <label for="id">ID: </label>
+                            <input type="number" name="id" id="id" disabled/>
+                        </div>
+
+                        <div>
+                            <label for="firstname">Vornamen: </label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Vornamen"/>
+                            <p class="error hidden" id="firstname-error"></p>
+                        </div>
+
+                        <div>
+                            <label for="lastname">Nachnamen: </label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Nachnamen"/>
+                            <p class="error hidden" id="lastname-error"></p>
+                        </div>
 
 
-                        <label for="firstname">Vornamen: </label>
-                        <input type="text" name="firstname" id="firstname" placeholder="Vornamen"/>
-                        <p class="error hidden" id="firstname-error"></p>
+                        <div>
+                            <label for="birthdate">Geburtsdatum: </label>
+                            <input type="text" name="birthdate" id="birthdate" placeholder="Geburtsdatum"/>
+                            <p class="error hidden" id="birthdate-error"></p>
+                        </div>
 
-                        <label for="lastname">Nachnamen: </label>
-                        <input type="text" name="lastname" id="lastname" placeholder="Nachnamen"/>
-                        <p class="error hidden" id="lastname-error"></p>
-
-
-                        <label for="birthdate">Geburtsdatum: </label>
-                        <input type="text" name="birthdate" id="birthdate" placeholder="Geburtsdatum"/>
-                        <p class="error hidden" id="birthdate-error"></p>
-
-                        <label for="email">E-Mail: </label>
-                        <input type="text" name="email" id="email" placeholder="E-Mail"/>
-                        <p class="error hidden" id="email-error"></p>
+                        <div>
+                            <label for="email">E-Mail: </label>
+                            <input type="text" name="email" id="email" placeholder="E-Mail"/>
+                            <p class="error hidden" id="email-error"></p>
+                        </div>
 
 
-                        <label for="address-street">Strasse: </label>
-                        <input type="text" name="address-street" id="address-street" placeholder="Strasse"/>
-                        <p class="error hidden" id="address-street-error"></p>
+                        <div>
+                            <label for="address-street">Strasse: </label>
+                            <input type="text" name="address-street" id="address-street" placeholder="Strasse"/>
+                            <p class="error hidden" id="address-street-error"></p>
+                        </div>
 
-                        <label for="address-number">Nr.: </label>
-                        <input type="text" name="address-number" id="address-number" placeholder="Nr."/>
-                        <p class="error hidden" id="address-number-error"></p>
+                        <div>
+                            <label for="address-number">Nr.: </label>
+                            <input type="text" name="address-number" id="address-number" placeholder="Nr."/>
+                            <p class="error hidden" id="address-number-error"></p>
+                        </div>
 
                         
-                        <label for="address-postcode">Postleitzahl: </label>
-                        <input type="text" name="address-postcode" id="address-postcode" placeholder="Postleitzahl"/>
-                        <p class="error hidden" id="address-postcode-error"></p>
+                        <div>
+                            <label for="address-postcode">Postleitzahl: </label>
+                            <input type="text" name="address-postcode" id="address-postcode" placeholder="Postleitzahl"/>
+                            <p class="error hidden" id="address-postcode-error"></p>
+                        </div>
                         
-                        <label for="address-locality">Ortschaft: </label>
-                        <input type="text" name="address-locality" id="address-locality" placeholder="Ortschaft"/>
-                        <p class="error hidden" id="address-locality-error"></p>
-
+                        <div>
+                            <label for="address-locality">Ortschaft: </label>
+                            <input type="text" name="address-locality" id="address-locality" placeholder="Ortschaft"/>
+                            <p class="error hidden" id="address-locality-error"></p>
+                        </div>
+                        
                         <div class="form-buttons">
                             <button type="submit">Speichern</button>
                             <button type="reset">Abbrechen</button>

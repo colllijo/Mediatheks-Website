@@ -39,26 +39,36 @@
                 </div>
                 <div class="content">
                     <form id="address-dialog">
-                        <label for="id">ID: </label>
-                        <input type="number" name="id" id="id" disabled/>
+                        <div>
+                            <label for="id">ID: </label>
+                            <input type="number" name="id" id="id" disabled/>
+                        </div>
+
+                        
+                        <div>
+                            <label for="street">Strasse: </label>
+                            <input type="text" name="street" id="street" placeholder="Strasse"/>
+                            <p class="error hidden" id="street-error"></p>
+                        </div>
+
+                        <div>
+                            <label for="number">Nr.: </label>
+                            <input type="text" name="number" id="number" placeholder="Nr."/>
+                            <p class="error hidden" id="number-error"></p>
+                        </div>
 
 
-                        <label for="street">Strasse: </label>
-                        <input type="text" name="street" id="street" placeholder="Strasse"/>
-                        <p class="error hidden" id="street-error"></p>
+                        <div>
+                            <label for="postcode">Postleitzahl: </label>
+                            <input type="text" name="postcode" id="postcode" placeholder="Postleitzahl"/>
+                            <p class="error hidden" id="postcode-error"></p>
+                        </div>
 
-                        <label for="number">Nr.: </label>
-                        <input type="text" name="number" id="number" placeholder="Nr."/>
-                        <p class="error hidden" id="number-error"></p>
-
-
-                        <label for="postcode">Postleitzahl: </label>
-                        <input type="text" name="postcode" id="postcode" placeholder="Postleitzahl"/>
-                        <p class="error hidden" id="postcode-error"></p>
-
-                        <label for="locality">Ortschaft: </label>
-                        <input type="text" name="locality" id="locality" placeholder="Ortschaft"/>
-                        <p class="error hidden" id="locality-error"></p>
+                        <div>
+                            <label for="locality">Ortschaft: </label>
+                            <input type="text" name="locality" id="locality" placeholder="Ortschaft"/>
+                            <p class="error hidden" id="locality-error"></p>
+                        </div>
 
                         <div class="form-buttons">
                             <button type="submit">Speichern</button>

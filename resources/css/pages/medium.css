@@ -2,6 +2,7 @@
 @import "../components/dialog.css";
 @import "../components/resource-table.css";
 @import "../components/menu.css";
+@import "../components/toast.css";
 
 main {
     display: grid;
