@@ -76,7 +76,7 @@ function loadDialogOptions() {
 		const borrowedMediums = borrows.map((borrow) => borrow.medium.id);
 
 		api.getMediums().then((mediums) => {
-			mediums.filter((medium) => !borrowedMediums.includes(medium)).forEach((medium) => {
+			mediums.filter((medium) => !borrowedMediums.includes(medium.id)).forEach((medium) => {
 				mediumDropdown.add(new Option(medium.title, medium.id));
 			})
 		})

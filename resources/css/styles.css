@@ -8,7 +8,7 @@ html, body {
 
     box-sizing: border-box;
 
-    background-color: var(--color-black);
+    background-color: var(--color-neutral-700);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,7 +34,7 @@ nav ul {
     
     overflow: hidden;
     
-    background-color: var(--color-cal-poly-green);
+    background-color: var(--color-secondary);
     list-style: none;
     list-style-type: none;
 }
@@ -43,7 +43,7 @@ nav ul li {
     display: inline;
     float: left;
 
-    border-color: var(--color-sage);
+    border-color: var(--color-neutral-400);
     border-style: solid;
     border-width: 0;
     border-right-width: 1px;
@@ -60,25 +60,35 @@ nav ul li a {
     display: block;
     padding: 14px 16px;
 
-    color: var(--color-white);
+    color: var(--color-neutral-0);
     text-align: center;
     text-decoration: none;
 }
 
 nav ul li a:hover {
-    background-color: var(--color-pakistan-green);
+    background-color: var(--color-secondary-highlight);
 }
 
 nav ul li .active {
-    background-color: var(--color-highlight);
+    background-color: var(--color-highlight-light);
 }
 
 /* Main Page Content */
 main {
-    color: var(--color-white);
+    color: var(--color-neutral-100);
+}
+
+button {
+    background-color: var(--color-neutral-500);
+    border-radius: 4px;
+    color: var(--color-neutral-0);
+}
+
+input {
+    border-radius: 4px;
 }
 
 /* Page Footer */
 footer {
-    background-color: gray;
+    display: block;
 }

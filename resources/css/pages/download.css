@@ -19,6 +19,7 @@ main {
 }
 
 .page-info p {
+    text-align: center;
     font-size: large;
     padding: 0 10%;
 }
@@ -36,6 +37,7 @@ main {
 .download-buttons a {
     width: fit-content;
     height: fit-content;
+    margin: 0 auto;
 }
 
 .download-buttons button {
@@ -43,9 +45,9 @@ main {
     font-size: larger;
 
     border-radius: 10px;
-    background-color: var(--color-sage);
+    background-color: var(--color-primary);
 }
 
 .download-buttons button:hover {
-    background-color: var(--color-yellow-green);
+    background-color: var(--color-primary-highlight);
 }

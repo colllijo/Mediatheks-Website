@@ -7,6 +7,10 @@ dialog {
     top: 50%;
     transform: translateY(-50%);
 
+    background-color: var(--color-neutral-900);
+    border-color: var(--color-neutral-50);
+    color: var(--color-neutral-0);
+
     padding: 0;
 }
 
@@ -33,13 +37,17 @@ dialog .content form * {
     margin: 4px 0;
 }
 
-dialog .content form div {
-    display: grid;
-    grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: auto 1fr;
+dialog .content footer div {
+    display: inline;
 }
 
-dialog .content form div input {
+dialog .content form div label {
+    width: fit-content;
+    font-size: larger;
+}
+
+dialog .content form div input, dialog .content form div select {
+    width: 60%;
     font-size: larger;
     float: right;
 }
@@ -60,9 +68,11 @@ dialog .content form .form-buttons {
 }
 
 dialog .content form .form-buttons button:first-child {
+    padding: 8px 0;
     float: left;
 }
 
 dialog .content form .form-buttons button:last-child {
+    padding: 8px 0;
     float: right;
 }

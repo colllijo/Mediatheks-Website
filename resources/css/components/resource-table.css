@@ -1,27 +1,33 @@
 /* Table */
 .resource-table {
     width: 100%;
+    color: var(--color-neutral-0);
 } 
 
 .resource-table, .resource-table th, .resource-table td {
-    border: 1px solid var(--color-white);
+    border: 0px solid var(--color-neutral-200);
     border-collapse: collapse;
+    text-align: left;
 }
 
 .resource-table thead {
+    background-color: var(--color-secondary);
     user-select: none;
 }
 
+.resource-table thead tr th {
+    padding: 4px;
+}
+
 .resource-table tbody tr {
-    color: var(--color-black);
-    background-color: var(--color-yellow-green);
+    color: var(--color-neutral-900);
+    background-color: var(--color-primary);
 }
 
 .resource-table tbody tr:nth-child(even) {
-    background-color: var(--color-apple-green);
+    background-color: var(--color-primary-75);
 }
 
 .resource-table tbody .selected {
-    background-color: var(--color-pakistan-green) !important;
-    color: var(--white) !important;
+    background-color: var(--color-primary-highlight) !important;
 }
